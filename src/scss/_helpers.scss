@@ -1,0 +1,69 @@
+
+.\+white-text {
+  color: $color-white;
+}
+
+/// Mixin to prefix a property
+/// @param {String} $property - Property name
+/// @param {*} $value - Property value
+@mixin prefix($property, $value) {
+  $prefixes: (moz webkit ms);
+  @each $prefix in $prefixes {
+    #{'-' + $prefix + '-' + $property}: $value;
+  }
+
+  // Output standard non-prefixed declaration
+  #{$property}: $value;
+}
+
+.\+flex {
+  display: flex;
+}
+
+.\+flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.\+flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.\+soft {
+  padding: $base-spacing-double;
+}
+
+.\+soft-half {
+  padding: $base-spacing-double;
+}
+
+.\+push-bottom-half {
+  margin-bottom: $base-spacing;
+}
+
+.\+push-bottom {
+  margin-bottom: $base-spacing-double;
+}
+
+.\+push-bottom-double {
+  margin-bottom: $base-spacing-double * 2!important;
+}
+
+.\+push-top {
+  margin-top: $base-spacing-double;
+}
+
+.\+push-right {
+  margin-right: $base-spacing-double;
+}
+
+.\+box-shadow {
+  @include prefix(box-shadow, 0px 0px 2px 0px rgba(0,0,0,0.7));
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: $border-radius;
+}
+
+.\+inset {
+  @include prefix(box-shadow, 0px 0px 2px 0px rgba(0,0,0,0.7) inset);
+}
