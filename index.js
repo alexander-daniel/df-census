@@ -2,7 +2,7 @@ const fs = require('fs');
 const url = require('url');
 const ecstatic = require('ecstatic');
 const micro = require('micro');
-let DATA = {};
+let DATA = JSON.parse(fs.readFileSync('/Users/alex/things/df/units.json', 'utf8'));
 
 // TODO: choose file to watch
 fs.watchFile('/Users/alex/things/df/units.json', () => {

@@ -110,6 +110,8 @@ function getUnits()
   return units
 end
 
+-- Fetch all unit metadata and output it to a json file, dwarf-census app will have
+-- to pick it up from there and watch for changes.
 local json_units = json.encode(getUnits(), {pretty= false})
 local file = io.open("units.json", "w")
 io.output(file)

@@ -30,8 +30,8 @@ class App extends React.Component {
               </div>
 
               <div className="body">
-                <div className="+push-bottom-double">{unit.profession}</div>
-
+                <div>{unit.profession}</div>
+                <div className="+push-bottom-double">{`Current Job: ${unit.currentJob}`}</div>
                 <ul>
                   {unit.skills.map((skill, j) => {
                     return (
