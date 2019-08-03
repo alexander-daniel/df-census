@@ -70,7 +70,7 @@ function watchAndUpdate(filePath) {
 // Create the BrowserWindow that runs the webapp frontend
 function createWindow() {
   win = new BrowserWindow({width: 800, height: 600});
-  win.loadURL('http://localhost:8808');
+  win.loadURL('http://localhost:8808', {"extraHeaders" : "pragma: no-cache\n"});
   win.webContents.openDevTools()
   win.on('closed', () => {
     win = null

@@ -23,7 +23,7 @@
     "webpack": "^3.1.0"
   },
   "scripts": {
-    "start": "micro-dev",
+    "start": "node index.js",
     "electron": "electron .",
     "watch": "webpack --config webpack.config.js -w"
   }

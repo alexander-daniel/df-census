@@ -85,6 +85,8 @@ function getUnits()
       -- print(type(unit.inventory[0].item))
       units[count] = {
         name = dfhack.TranslateName(dfhack.units.getVisibleName(unit)),
+        age = dfhack.units.getAge(unit),
+        gender = unit.sex,
         profession = dfhack.units.getProfessionName(unit),
         -- civ = dfhack.TranslateName(df.historical_entity.find(unit.civ_id).name),
         stressLevel = getStressLevelDescription(unit.status.current_soul.personality.stress_level),
